@@ -15,11 +15,11 @@ class Nivel:
         self.serpientes = serpientes
         casillas = self.crear_tablero_personalizado()
         self.tablero = Tablero(casillas)
+        self.partida = Partida(self.nombres_de_jugadores,self.tablero)
 
     def iniciar(self):
-        partida = Partida(self.nombres_de_jugadores,self.tablero)
         # Inicializo la partida
-        partida.iniciar_juego()
+        self.partida.iniciar_juego()
 
     def crear_tablero_personalizado(self):
         casillas = []

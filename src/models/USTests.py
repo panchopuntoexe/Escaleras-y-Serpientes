@@ -11,9 +11,12 @@ class US1(unittest.TestCase):
     """
 
     def test_UAT1(self):
-        nivel = Nivel()
-        # nivel.iniciar()
-        self.assertEqual(nivel.jugadores[0].token.get_posicion_actual(), 1)
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+        
+        self.assertEqual(nivel.partida.jugadores[0].token.get_posicion_actual(), 1)
 
     """
     Given the token is on square 1
@@ -22,9 +25,13 @@ class US1(unittest.TestCase):
     """
 
     def test_UAT2(self):
-        nivel = Nivel()
-        nivel.jugadores[0].token.moverse(3)
-        self.assertEqual(nivel.jugadores[0].token.get_posicion_actual(), 4)
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+        
+        nivel.partida.jugadores[0].token.moverse(3)
+        self.assertEqual(nivel.partida.jugadores[0].token.get_posicion_actual(), 4)
 
     """
     Given the token is on square 1
@@ -34,10 +41,14 @@ class US1(unittest.TestCase):
     """
 
     def test_UAT3(self):
-        nivel = Nivel()
-        nivel.jugadores[0].token.moverse(3)
-        nivel.jugadores[0].token.moverse(4)
-        self.assertEqual(nivel.jugadores[0].token.get_posicion_actual(), 8)
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+        
+        nivel.partida.jugadores[0].token.moverse(3)
+        nivel.partida.jugadores[0].token.moverse(4)
+        self.assertEqual(nivel.partida.jugadores[0].token.get_posicion_actual(), 8)
 
 
 class US2(unittest.TestCase):
@@ -49,11 +60,14 @@ class US2(unittest.TestCase):
     """
 
     def test_UAT1(self):
-        nivel = Nivel()
-        # nivel.iniciar()
-        nivel.jugadores[0].token.posicionActual = 97
-        nivel.jugadores[0].token.moverse(3)
-        self.assertEqual(nivel.jugadores[0].token.get_posicion_actual(), 100)
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+        
+        nivel.partida.jugadores[0].token.posicionActual = 97
+        nivel.partida.jugadores[0].token.moverse(3)
+        self.assertEqual(nivel.partida.jugadores[0].token.get_posicion_actual(), 100)
 
     """
     Given the token is on square 97
@@ -63,10 +77,14 @@ class US2(unittest.TestCase):
     """
 
     def test_UAT2(self):
-        nivel = Nivel()
-        nivel.jugadores[0].token.posicionActual = 97
-        nivel.jugadores[0].token.moverse(4)
-        self.assertEqual(nivel.jugadores[0].token.get_posicion_actual(), 97)
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+        
+        nivel.partida.jugadores[0].token.posicionActual = 97
+        nivel.partida.jugadores[0].token.moverse(4)
+        self.assertEqual(nivel.partida.jugadores[0].token.get_posicion_actual(), 97)
 
 
 class US3(unittest.TestCase):
@@ -77,9 +95,12 @@ class US3(unittest.TestCase):
     """
 
     def test_UAT1(self):
-        nivel = Nivel()
-        # nivel.iniciar()
-        resultado_de_lanzamiento = nivel.jugadores[0].dado.lanzar()
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+
+        resultado_de_lanzamiento = nivel.partida.jugadores[0].dado.lanzar()
         self.assertGreaterEqual(resultado_de_lanzamiento, 1)
         self.assertLessEqual(resultado_de_lanzamiento, 6)
 
@@ -90,16 +111,19 @@ class US3(unittest.TestCase):
     """
 
     def test_UAT2(self):
-        nivel = Nivel()
-        posicion_inicial = nivel.jugadores[0].token.get_posicion_actual()
+        jugadores=["Francisco","Joss"]
+        escaleras={1:38,6:14,7:31,14:26,20:42,35:44,27:84,50:67,70:91,77:98,86:94}
+        serpientes={98:80,94:75,91:88,88:68,73:53,63:60,61:19,45:25,48:11,15:6}
+        nivel = Nivel(jugadores,escaleras,serpientes)
+        posicion_inicial = nivel.partida.jugadores[0].token.get_posicion_actual()
 
-        resultado_de_lanzamiento = nivel.jugadores[0].dado.lanzar()
+        resultado_de_lanzamiento = nivel.partida.jugadores[0].dado.lanzar()
         while (resultado_de_lanzamiento != 4):
-            resultado_de_lanzamiento = nivel.jugadores[0].dado.lanzar()
+            resultado_de_lanzamiento = nivel.partida.jugadores[0].dado.lanzar()
 
-        nivel.jugadores[0].token.moverse(resultado_de_lanzamiento)
+        nivel.partida.jugadores[0].token.moverse(resultado_de_lanzamiento)
         
-        posicion_final = nivel.jugadores[0].token.get_posicion_actual()
+        posicion_final = nivel.partida.jugadores[0].token.get_posicion_actual()
         self.assertEqual(posicion_final - posicion_inicial, 4)
 
 class Tests:
