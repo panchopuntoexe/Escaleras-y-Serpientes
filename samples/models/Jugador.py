@@ -40,8 +40,8 @@ class Jugador:
         #Cambia la posición del token solo si es menor o igual a la 100
         if posicion_nueva<=100:
             #Obtiene la posición nueva consultando si la casilla es serpiente, escalera o normal
-            posicion_nueva = self.tablero.casillas[posicion_nueva-1].verificarMovimientoExtra()
-            self.token.moverse(posicion_nueva)
+            movimiento_extra = self.tablero.casillas[posicion_nueva-1].verificar_movimiento_extra()
+            self.token.moverse(movimientos+movimiento_extra)
 
             print("Nueva posición de "+self.__str__())
         return posicion_nueva==100

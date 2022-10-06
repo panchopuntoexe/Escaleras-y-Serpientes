@@ -10,7 +10,7 @@ class Casilla:
         Si la casilla es inicio de una escalera o cabeza de serpiente, entonces tendrá un valor distinto al atributo posicion
     Métodos
     -------
-    verificarMovimientoExtra
+    verificar_movimiento_extra
         Valida si la casilla es escalera, serpiente o normal
     """
     
@@ -21,12 +21,12 @@ class Casilla:
     def set_posicion_final(self, posicion_final):
         self.posicion_final = posicion_final
 
-    #Función que retorna la posición final si la casilla no es normal
-    def verificarMovimientoExtra(self):
+    #Función que retorna el cambio de posición si la casilla no es normal
+    def verificar_movimiento_extra(self):
         #Si la posicion y posicion_final son iguales entonces no se realiza ningún movimiento adicional
         if self.posicion==self.posicion_final:
-            return self.posicion
+            return 0
         else:
             #Se indica que hubo algún tipo de penalización o premio
             print("Se añadió un movimiento extra")
-            return self.posicion_final
+            return self.posicion_final-self.posicion
