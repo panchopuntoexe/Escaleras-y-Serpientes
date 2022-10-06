@@ -12,14 +12,17 @@ class Token:
     lanzar()
         Simula el lanzamiento de un dado de 6 lados
     """
-    
-    def __init__(self):
-        self.posicionActual=1
 
-    def moverse(self,movimientos):
-        posicion_nueva=self.posicionActual+movimientos
-        if posicion_nueva<=100:
-            self.posicionActual=posicion_nueva
-        
+    def __init__(self):
+        self.posicionActual = 1
+
+    def moverse(self, movimientos):
+        posicion_nueva = self.posicionActual+movimientos
+        if posicion_nueva <= 100:
+            self.posicionActual = posicion_nueva
+    
+    def get_posicion_actual(self):
+        return self.posicionActual
+
     def __str__(self) -> str:
         return str(self.posicionActual)

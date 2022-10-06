@@ -17,21 +17,17 @@ class Partida:
     def __init__(self, jugadores):
         self.jugadores = jugadores
 
-    #Itera sobre la lista de jugadores
+    # Itera sobre la lista de jugadores
     def iniciar_juego(self):
-        bandera=False
-        while(not bandera):
+        bandera = False
+        while (not bandera):
             for jugador in self.jugadores:
                 print("\n***** Turno de "+jugador.__str__()+" *****")
-                
-                #Comentar la siguiente línea si se quiere mostrar todo el juego sin interrupciones
+
+                # Comentar la siguiente línea si se quiere mostrar todo el juego sin interrupciones
                 input("Presiona enter para lanzar el dado ")
-                bandera=jugador.iniciar_movimiento()
+                bandera = jugador.iniciar_movimiento()
 
-                #Verifico que hubo algún ganador para finalizar la partida
-                if(bandera):
+                # Verifico que hubo algún ganador para finalizar la partida
+                if (bandera):
                     break
-        
-
-
-

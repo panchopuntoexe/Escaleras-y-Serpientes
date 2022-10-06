@@ -7,6 +7,6 @@ class Tablero:
     casillas : List
         Lista de casillas
     """
-    
+
     def __init__(self, casillas):
         self.casillas = casillas

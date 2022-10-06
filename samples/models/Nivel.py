@@ -8,24 +8,25 @@ class Nivel:
     """
     Clase que inicializa el la partida con dos jugadores y una estructura específica de escaleras y serpientes
     """
+
     def __init__(self):
         casillas = self.crear_tablero_personalizado()
-        tablero=Tablero(casillas)
-        self.jugadores = [Jugador("Francisco",tablero),Jugador("David",tablero)]
-        
+        tablero = Tablero(casillas)
+        self.jugadores = [Jugador("Francisco", tablero),
+                          Jugador("David", tablero)]
 
     def iniciar(self):
         partida = Partida(self.jugadores)
-        #Inicializo la partida
+        # Inicializo la partida
         partida.iniciar_juego()
-    
+
     def crear_tablero_personalizado(self):
         casillas = []
         for posicion in range(100):
             casillas.append(Casilla(posicion+1))
 
-        #Se setean las escaleras y serpientes según la imágen del documento de requerimientos
-        #Escaleras
+        # Se setean las escaleras y serpientes según la imágen del documento de requerimientos
+        # Escaleras
         casillas[1].set_posicion_final(38)
         casillas[6].set_posicion_final(14)
         casillas[7].set_posicion_final(31)
@@ -38,7 +39,7 @@ class Nivel:
         casillas[77].set_posicion_final(98)
         casillas[86].set_posicion_final(94)
 
-        #Serpientes
+        # Serpientes
         casillas[98].set_posicion_final(80)
         casillas[94].set_posicion_final(75)
         casillas[91].set_posicion_final(88)
