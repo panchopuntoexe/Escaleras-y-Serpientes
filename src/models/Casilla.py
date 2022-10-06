@@ -30,3 +30,6 @@ class Casilla:
             # Se indica que hubo algún tipo de penalización o premio
             print("Se añadió un movimiento extra")
             return self.posicion_final-self.posicion
+
+    def __str__(self) -> str:
+        return "Posicion: "+str(self.posicion) + " Posicion final: " + str(self.posicion_final)

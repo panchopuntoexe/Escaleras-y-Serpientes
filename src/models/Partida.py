@@ -1,3 +1,5 @@
+from models.Jugador import Jugador
+
 class Partida:
     """
     Clase que gestiona los turnos de jugadores y el fin del juego.
@@ -14,8 +16,10 @@ class Partida:
         Comienza el juego con los jugadores en el tablero
     """
 
-    def __init__(self, jugadores):
-        self.jugadores = jugadores
+    def __init__(self, nombres_de_jugadores,tablero):
+        self.jugadores=[]
+        for nombre_de_jugador in nombres_de_jugadores:
+            self.jugadores.append(Jugador(nombre_de_jugador,tablero))
 
     # Itera sobre la lista de jugadores
     def iniciar_juego(self):
